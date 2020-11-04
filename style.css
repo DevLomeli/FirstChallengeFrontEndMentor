@@ -16,19 +16,44 @@ body {
   background: var(--veryDarkBlue);
   font-size: 14px;
   font-family: "Raleway", sans-serif;
-  border: 5px solid black;
+}
+
+main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: fit-content;
   height: 100vh;
-  border: 1px solid white;
+  width: 100%;
 }
 
-@media only screen and (min-width: 768px) {
-  body {
+@media only screen and (min-width: 1440px) {
+  main {
+    background: url("./images/bg-desktop.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: -2px 460px;
     flex-direction: row;
+  }
+}
+
+@media only screen and (max-width: 1439px) {
+  main {
+    background-image: url("./images/bg-desktop.png");
+    flex-direction: row;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: -50px 310px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  main {
+    background: url("./images/bg-mobile.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    flex-direction: column;
   }
 }
 
@@ -38,12 +63,12 @@ h1 {
 
 .bgBlue {
   background: var(--darkBlue);
-  width: 80%;
+  width: 90%;
   max-width: 300px;
   min-height: fit-content;
-  height: 150px;
+  height: 190px;
   margin-bottom: 1rem;
-  padding: 2rem;
+  padding: 3rem 2rem;
   border-radius: 8px;
 }
 @media only screen and (min-width: 768px) {
@@ -53,7 +78,7 @@ h1 {
 }
 
 .icons__container {
-  border-top-right-radius: 50px;
+  border-top-right-radius: 90px;
   display: flex;
   flex-direction: column;
 }
@@ -62,7 +87,7 @@ h1 {
   margin-bottom: 1rem;
 }
 h1 i {
-  margin-right: 0.5rem;
+  margin-right: 10px;
 }
 
 .icons__wrapper > * {
@@ -75,7 +100,8 @@ h1 i {
 
 .icons__container div i {
   color: var(--darkBlue);
-  font-size: 1.5rem;
+  font-size: 25px;
+  padding: 2px 2px;
   cursor: pointer;
 }
 
@@ -87,6 +113,8 @@ h1 i {
 @media only screen and (min-width: 768px) {
   .content__container {
     max-width: 500px !important;
+    height: 150px;
+    transform: translateY(20px);
   }
 }
 
@@ -113,9 +141,10 @@ h1 i {
   transition: all 1s ease;
 }
 
-.progressBar * {
-  font-size: 12px;
-  margin-right: 2px;
+.progressBar i {
+  font-size: 10px;
+  margin-right: 3px;
+  margin-bottom: 1px;
 }
 
 .values__progressBar {
@@ -143,8 +172,7 @@ h1 i {
   .dataUploaded {
     position: absolute;
     top: -45px;
-    right: 0%;
-    transform: translateX(50%);
+    transform: translateX(70px);
     height: fit-content;
   }
 }
